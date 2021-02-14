@@ -20,7 +20,7 @@
  */
 static inline void LCD_D4_set_pull_mode(const enum port_pull_mode pull_mode)
 {
-	PORTB_set_pin_pull_mode(0, pull_mode);
+	PORTB_set_pin_pull_mode(2, pull_mode);
 }
 
 /**
@@ -36,7 +36,7 @@ static inline void LCD_D4_set_pull_mode(const enum port_pull_mode pull_mode)
  */
 static inline void LCD_D4_set_dir(const enum port_dir dir)
 {
-	PORTB_set_pin_dir(0, dir);
+	PORTB_set_pin_dir(2, dir);
 }
 
 /**
@@ -49,7 +49,7 @@ static inline void LCD_D4_set_dir(const enum port_dir dir)
  */
 static inline void LCD_D4_set_level(const bool level)
 {
-	PORTB_set_pin_level(0, level);
+	PORTB_set_pin_level(2, level);
 }
 
 /**
@@ -59,7 +59,7 @@ static inline void LCD_D4_set_level(const bool level)
  */
 static inline void LCD_D4_toggle_level()
 {
-	PORTB_toggle_pin_level(0);
+	PORTB_toggle_pin_level(2);
 }
 
 /**
@@ -69,7 +69,7 @@ static inline void LCD_D4_toggle_level()
  */
 static inline bool LCD_D4_get_level()
 {
-	return PORTB_get_pin_level(0);
+	return PORTB_get_pin_level(2);
 }
 
 /**
@@ -82,7 +82,7 @@ static inline bool LCD_D4_get_level()
  */
 static inline void LCD_E0_set_pull_mode(const enum port_pull_mode pull_mode)
 {
-	PORTB_set_pin_pull_mode(1, pull_mode);
+	PORTB_set_pin_pull_mode(3, pull_mode);
 }
 
 /**
@@ -98,7 +98,7 @@ static inline void LCD_E0_set_pull_mode(const enum port_pull_mode pull_mode)
  */
 static inline void LCD_E0_set_dir(const enum port_dir dir)
 {
-	PORTB_set_pin_dir(1, dir);
+	PORTB_set_pin_dir(3, dir);
 }
 
 /**
@@ -111,7 +111,7 @@ static inline void LCD_E0_set_dir(const enum port_dir dir)
  */
 static inline void LCD_E0_set_level(const bool level)
 {
-	PORTB_set_pin_level(1, level);
+	PORTB_set_pin_level(3, level);
 }
 
 /**
@@ -121,7 +121,7 @@ static inline void LCD_E0_set_level(const bool level)
  */
 static inline void LCD_E0_toggle_level()
 {
-	PORTB_toggle_pin_level(1);
+	PORTB_toggle_pin_level(3);
 }
 
 /**
@@ -131,7 +131,7 @@ static inline void LCD_E0_toggle_level()
  */
 static inline bool LCD_E0_get_level()
 {
-	return PORTB_get_pin_level(1);
+	return PORTB_get_pin_level(3);
 }
 
 /**
@@ -144,7 +144,7 @@ static inline bool LCD_E0_get_level()
  */
 static inline void LCD_RS_set_pull_mode(const enum port_pull_mode pull_mode)
 {
-	PORTB_set_pin_pull_mode(2, pull_mode);
+	PORTB_set_pin_pull_mode(4, pull_mode);
 }
 
 /**
@@ -160,7 +160,7 @@ static inline void LCD_RS_set_pull_mode(const enum port_pull_mode pull_mode)
  */
 static inline void LCD_RS_set_dir(const enum port_dir dir)
 {
-	PORTB_set_pin_dir(2, dir);
+	PORTB_set_pin_dir(4, dir);
 }
 
 /**
@@ -173,7 +173,7 @@ static inline void LCD_RS_set_dir(const enum port_dir dir)
  */
 static inline void LCD_RS_set_level(const bool level)
 {
-	PORTB_set_pin_level(2, level);
+	PORTB_set_pin_level(4, level);
 }
 
 /**
@@ -183,7 +183,7 @@ static inline void LCD_RS_set_level(const bool level)
  */
 static inline void LCD_RS_toggle_level()
 {
-	PORTB_toggle_pin_level(2);
+	PORTB_toggle_pin_level(4);
 }
 
 /**
@@ -193,7 +193,7 @@ static inline void LCD_RS_toggle_level()
  */
 static inline bool LCD_RS_get_level()
 {
-	return PORTB_get_pin_level(2);
+	return PORTB_get_pin_level(4);
 }
 
 /**
@@ -206,7 +206,7 @@ static inline bool LCD_RS_get_level()
  */
 static inline void LCD_D6_set_pull_mode(const enum port_pull_mode pull_mode)
 {
-	PORTB_set_pin_pull_mode(3, pull_mode);
+	PORTD_set_pin_pull_mode(3, pull_mode);
 }
 
 /**
@@ -222,7 +222,7 @@ static inline void LCD_D6_set_pull_mode(const enum port_pull_mode pull_mode)
  */
 static inline void LCD_D6_set_dir(const enum port_dir dir)
 {
-	PORTB_set_pin_dir(3, dir);
+	PORTD_set_pin_dir(3, dir);
 }
 
 /**
@@ -235,7 +235,7 @@ static inline void LCD_D6_set_dir(const enum port_dir dir)
  */
 static inline void LCD_D6_set_level(const bool level)
 {
-	PORTB_set_pin_level(3, level);
+	PORTD_set_pin_level(3, level);
 }
 
 /**
@@ -245,7 +245,7 @@ static inline void LCD_D6_set_level(const bool level)
  */
 static inline void LCD_D6_toggle_level()
 {
-	PORTB_toggle_pin_level(3);
+	PORTD_toggle_pin_level(3);
 }
 
 /**
@@ -255,7 +255,7 @@ static inline void LCD_D6_toggle_level()
  */
 static inline bool LCD_D6_get_level()
 {
-	return PORTB_get_pin_level(3);
+	return PORTD_get_pin_level(3);
 }
 
 /**
@@ -268,7 +268,7 @@ static inline bool LCD_D6_get_level()
  */
 static inline void LCD_D5_set_pull_mode(const enum port_pull_mode pull_mode)
 {
-	PORTB_set_pin_pull_mode(4, pull_mode);
+	PORTD_set_pin_pull_mode(4, pull_mode);
 }
 
 /**
@@ -284,7 +284,7 @@ static inline void LCD_D5_set_pull_mode(const enum port_pull_mode pull_mode)
  */
 static inline void LCD_D5_set_dir(const enum port_dir dir)
 {
-	PORTB_set_pin_dir(4, dir);
+	PORTD_set_pin_dir(4, dir);
 }
 
 /**
@@ -297,7 +297,7 @@ static inline void LCD_D5_set_dir(const enum port_dir dir)
  */
 static inline void LCD_D5_set_level(const bool level)
 {
-	PORTB_set_pin_level(4, level);
+	PORTD_set_pin_level(4, level);
 }
 
 /**
@@ -307,7 +307,7 @@ static inline void LCD_D5_set_level(const bool level)
  */
 static inline void LCD_D5_toggle_level()
 {
-	PORTB_toggle_pin_level(4);
+	PORTD_toggle_pin_level(4);
 }
 
 /**
@@ -317,7 +317,7 @@ static inline void LCD_D5_toggle_level()
  */
 static inline bool LCD_D5_get_level()
 {
-	return PORTB_get_pin_level(4);
+	return PORTD_get_pin_level(4);
 }
 
 /**
@@ -330,7 +330,7 @@ static inline bool LCD_D5_get_level()
  */
 static inline void LCD_D7_set_pull_mode(const enum port_pull_mode pull_mode)
 {
-	PORTB_set_pin_pull_mode(5, pull_mode);
+	PORTD_set_pin_pull_mode(2, pull_mode);
 }
 
 /**
@@ -346,7 +346,7 @@ static inline void LCD_D7_set_pull_mode(const enum port_pull_mode pull_mode)
  */
 static inline void LCD_D7_set_dir(const enum port_dir dir)
 {
-	PORTB_set_pin_dir(5, dir);
+	PORTD_set_pin_dir(2, dir);
 }
 
 /**
@@ -359,7 +359,7 @@ static inline void LCD_D7_set_dir(const enum port_dir dir)
  */
 static inline void LCD_D7_set_level(const bool level)
 {
-	PORTB_set_pin_level(5, level);
+	PORTD_set_pin_level(2, level);
 }
 
 /**
@@ -369,7 +369,7 @@ static inline void LCD_D7_set_level(const bool level)
  */
 static inline void LCD_D7_toggle_level()
 {
-	PORTB_toggle_pin_level(5);
+	PORTD_toggle_pin_level(2);
 }
 
 /**
@@ -379,7 +379,7 @@ static inline void LCD_D7_toggle_level()
  */
 static inline bool LCD_D7_get_level()
 {
-	return PORTB_get_pin_level(5);
+	return PORTD_get_pin_level(2);
 }
 
 #endif /* ATMEL_START_PINS_H_INCLUDED */
