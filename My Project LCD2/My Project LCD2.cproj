@@ -216,6 +216,18 @@
     <Compile Include="src\protected_io.S">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Timer\atmega-timers.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Timer\atmega-timers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Timer\CustomTimer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Timer\CustomTimer.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="utils\assembler.h">
       <SubType>compile</SubType>
     </Compile>
@@ -248,6 +260,7 @@
     <Folder Include="include\" />
     <Folder Include="LCD" />
     <Folder Include="src\" />
+    <Folder Include="Timer\" />
     <Folder Include="utils\" />
     <Folder Include="utils\assembler\" />
   </ItemGroup>

@@ -55,7 +55,7 @@ static inline void mcu_init(void)
 	 * disables all peripherals to save power. Driver shall enable
 	 * peripheral if used */
 
-	PRR = (1 << PRSPI) | (1 << PRTIM2) | (1 << PRTIM0) | (1 << PRTIM1) | (1 << PRTWI) | (1 << PRUSART0) | (1 << PRADC);
+	//PRR = (1 << PRSPI) | (1 << PRTIM2) | (1 << PRTIM0) | (1 << PRTIM1) | (1 << PRTWI) | (1 << PRUSART0) | (1 << PRADC);
 
 	/* Set all pins to low power mode */
 	PORTB_set_port_dir(0xff, PORT_DIR_OFF);
