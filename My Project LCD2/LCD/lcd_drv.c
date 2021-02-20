@@ -7,6 +7,7 @@
 
 #include "LCD/lcd_drv.h"
 #include "LCD/mydefs.h"
+#include "Config/clock_config.h"
 #include <stdint-gcc.h>
 #include <util\delay.h>
 

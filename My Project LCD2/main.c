@@ -2,6 +2,7 @@
 #include "LCD\lcd_drv.h"
 #include "LCD/mydefs.h"
 #include "Timer\CustomTimer.h"
+#include "Config/clock_config.h"
 #include <atmel_start.h>
 #include <util\delay.h>
 

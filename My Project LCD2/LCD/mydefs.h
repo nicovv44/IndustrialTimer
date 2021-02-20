@@ -12,8 +12,6 @@
 
 #include<avr/io.h>
 
-#define F_CPU 16000000UL
-
 #define	LCD_D4		SBIT( PORTB, 2 ) // PB2, Pin D10
 #define	LCD_DDR_D4	SBIT( DDRB, 2 )
 
