@@ -42,6 +42,12 @@
 void system_init()
 {
 	mcu_init();
+	
+	/************************************************************************/
+	/* PORTB setting                                                        */
+	/************************************************************************/
+
+#pragma region PORTB_SETTING
 
 	/* PORT setting on PB0 */
 
@@ -102,8 +108,56 @@ void system_init()
 	    // <false"> Low
 	    // <true"> High
 	    false);
+	
+#pragma endregion PORTB_SETTING
+	
+	/************************************************************************/
+	/* PORTC setting                                                        */
+	/************************************************************************/
 
-	/* PORT setting on PB5 */
+#pragma region PORTC_SETTING
+	
+	/* PORT setting on PC0 */
+
+	// Set pin direction to input
+	SW_UP_set_dir(PORT_DIR_IN);
+
+	// Set pin pull up
+	SW_UP_set_pull_mode(PORT_PULL_UP);
+	
+	/* PORT setting on PC1 */
+
+	// Set pin direction to input
+	SW_LEFT_set_dir(PORT_DIR_IN);
+
+	// Set pin pull up
+	SW_LEFT_set_pull_mode(PORT_PULL_UP);
+	
+	/* PORT setting on PC2 */
+
+	// Set pin direction to input
+	SW_RIGHT_set_dir(PORT_DIR_IN);
+
+	// Set pin pull up
+	SW_RIGHT_set_pull_mode(PORT_PULL_UP);
+	
+	/* PORT setting on PC3 */
+
+	// Set pin direction to input
+	SW_DOWN_set_dir(PORT_DIR_IN);
+
+	// Set pin pull up
+	SW_DOWN_set_pull_mode(PORT_PULL_UP);
+	
+#pragma endregion PORTC_SETTING
+
+	/************************************************************************/
+	/* PORTD setting                                                        */
+	/************************************************************************/
+
+#pragma region PORTD_SETTING
+	
+	/* PORT setting on PD2*/
 
 	// Set pin direction to output
 	LCD_D7_set_dir(PORT_DIR_OUT);
@@ -115,5 +169,7 @@ void system_init()
 	    // <true"> High
 	    false);
 
+#pragma endregion PORTD_SETTING
+	
 	sysctrl_init();
 }
