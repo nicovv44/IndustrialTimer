@@ -237,7 +237,7 @@ static inline bool SW_RIGHT_get_level()
  */
 static inline void SW_DOWN_set_pull_mode(const enum port_pull_mode pull_mode)
 {
-	PORTC_set_pin_pull_mode(2, pull_mode);
+	PORTC_set_pin_pull_mode(3, pull_mode);
 }
 
 /**
@@ -253,7 +253,7 @@ static inline void SW_DOWN_set_pull_mode(const enum port_pull_mode pull_mode)
  */
 static inline void SW_DOWN_set_dir(const enum port_dir dir)
 {
-	PORTC_set_pin_dir(2, dir);
+	PORTC_set_pin_dir(3, dir);
 }
 
 /**
@@ -266,7 +266,7 @@ static inline void SW_DOWN_set_dir(const enum port_dir dir)
  */
 static inline void SW_DOWN_set_level(const bool level)
 {
-	PORTC_set_pin_level(2, level);
+	PORTC_set_pin_level(3, level);
 }
 
 /**
@@ -276,7 +276,7 @@ static inline void SW_DOWN_set_level(const bool level)
  */
 static inline void SW_DOWN_toggle_level()
 {
-	PORTC_toggle_pin_level(2);
+	PORTC_toggle_pin_level(3);
 }
 
 /**
@@ -286,7 +286,7 @@ static inline void SW_DOWN_toggle_level()
  */
 static inline bool SW_DOWN_get_level()
 {
-	return PORTC_get_pin_level(2);
+	return PORTC_get_pin_level(3);
 }
 
 #pragma endregion SW_DOWN

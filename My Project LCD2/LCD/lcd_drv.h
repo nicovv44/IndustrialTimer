@@ -122,6 +122,7 @@ void lcd_putchar( uint8_t d );
 void lcd_init( void );
 void lcd_puts( void *s );
 void lcd_blank( uint8_t len );          // blank n digits
+void lcd_clear( void );					// Clear all display
 void lcd_command( uint8_t d );
 
 

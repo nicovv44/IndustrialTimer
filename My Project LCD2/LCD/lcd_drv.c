@@ -93,6 +93,12 @@ void lcd_blank( uint8_t len )                   // blank n digits
 }
 
 
+void lcd_clear( void )
+{
+	lcd_command( 0x01 );
+}
+
+
 void lcd_init( void )
 {
 	LCD_DDR_D4 = 1;                               // enable output pins

@@ -216,6 +216,12 @@
     <Compile Include="src\protected_io.S">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Switch\Config.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Switch\Config.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Timer\atmega-timers.c">
       <SubType>compile</SubType>
     </Compile>
@@ -259,6 +265,7 @@
     <Folder Include="doxygen\generator\" />
     <Folder Include="include\" />
     <Folder Include="LCD" />
+    <Folder Include="Switch" />
     <Folder Include="src\" />
     <Folder Include="Timer\" />
     <Folder Include="utils\" />

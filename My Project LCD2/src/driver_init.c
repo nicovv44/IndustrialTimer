@@ -151,6 +151,13 @@ void system_init()
 	
 #pragma endregion PORTC_SETTING
 
+#pragma region PORTC_SETTING_INTERUPT
+
+	PCICR |=  1 << PCIE1; // Pin change interrupt 1 is enabled.
+	PCMSK1 |= 0b1111; // Selects whether pin change interrupt is enabled on the corresponding I/O pin (PCINT8..11 are enabled)
+
+#pragma endregion PORTC_SETTING_INTERUPT
+
 	/************************************************************************/
 	/* PORTD setting                                                        */
 	/************************************************************************/
