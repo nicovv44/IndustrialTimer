@@ -177,6 +177,12 @@
     <Compile Include="Config\RTE_Components.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Display\DisplayTool.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Display\DisplayTool.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="driver_isr.c">
       <SubType>compile</SubType>
     </Compile>
@@ -265,6 +271,7 @@
     <Folder Include="doxygen\generator\" />
     <Folder Include="include\" />
     <Folder Include="LCD" />
+    <Folder Include="Display" />
     <Folder Include="Switch" />
     <Folder Include="src\" />
     <Folder Include="Timer\" />

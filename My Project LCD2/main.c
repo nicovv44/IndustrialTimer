@@ -4,8 +4,10 @@
 #include "Timer\CustomTimer.h"
 #include "Config/clock_config.h"
 #include "Switch/Config.h"
+#include "Display/DisplayTool.h"
 #include <atmel_start.h>
 #include <util\delay.h>
+#include <stdio.h>
 
 
 //bool Waiting = false;
@@ -29,6 +31,9 @@
 	//Waiting = false;
 //}
 
+const char Revision[9] = "00.00.01";
+volatile int operationValue = 123;
+volatile int setValue = 7538;
 
 int main(void)
 {
@@ -37,8 +42,13 @@ int main(void)
 	
 	lcd_init();
 	lcd_xy( 0, 0);
-	char On[3] = "ON";
-	lcd_puts( (void*)On );
+	char RevisionDisplay[17];
+	sprintf(RevisionDisplay, "Revision%s", Revision);
+	lcd_puts( (void*)RevisionDisplay );
+	_delay_ms(2000);
+
+	displayOperationValue(operationValue);
+	displaySetValue(setValue);
 	
 	sei();
 	
