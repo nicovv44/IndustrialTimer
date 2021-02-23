@@ -18,9 +18,9 @@ typedef enum
 } SwitchState;
 
 
-extern volatile bool SW_UP_TO_PROCESS;
-extern volatile bool SW_LEFT_TO_PROCESS;
-extern volatile bool SW_RIGHT_TO_PROCESS;
-extern volatile bool SW_DOWN_TO_PROCESS;
+extern volatile bool SW_1_TO_PROCESS;
+extern volatile bool SW_2_TO_PROCESS;
+extern volatile bool SW_3_TO_PROCESS;
+extern volatile bool SW_4_TO_PROCESS;
 
 #endif /* CONFIG_H_ */

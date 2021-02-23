@@ -48,37 +48,37 @@ int main(void)
 
 	while (1) {
 		_delay_ms(10);
-		if(SW_UP_TO_PROCESS)
+		if(SW_1_TO_PROCESS)
 		{
 			lcd_clear();
 			lcd_xy( 0, 0);
 			char Off[3] = "UP";
 			lcd_puts( (void*)Off );
-			SW_UP_TO_PROCESS = false;
+			SW_1_TO_PROCESS = false;
 		}
-		else if (SW_LEFT_TO_PROCESS)
+		else if (SW_2_TO_PROCESS)
 		{
 			lcd_clear();
 			lcd_xy( 0, 0);
 			char Off[5] = "LEFT";
 			lcd_puts( (void*)Off );
-			SW_LEFT_TO_PROCESS = false;
+			SW_2_TO_PROCESS = false;
 		}
-		else if (SW_RIGHT_TO_PROCESS)
+		else if (SW_3_TO_PROCESS)
 		{
 			lcd_clear();
 			lcd_xy( 0, 0);
 			char Off[6] = "RIGHT";
 			lcd_puts( (void*)Off );
-			SW_RIGHT_TO_PROCESS = false;
+			SW_3_TO_PROCESS = false;
 		}
-		else if (SW_DOWN_TO_PROCESS)
+		else if (SW_4_TO_PROCESS)
 		{
 			lcd_clear();
 			lcd_xy( 0, 0);
 			char Off[5] = "DOWN";
 			lcd_puts( (void*)Off );
-			SW_DOWN_TO_PROCESS = false;
+			SW_4_TO_PROCESS = false;
 		}
 	}
 }

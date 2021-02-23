@@ -12,26 +12,26 @@
 
 
 /************************************************************************/
-/* SW_UP                                                               */
+/* SW_1                                                                 */
 /************************************************************************/
 
-#pragma region SW_UP
+#pragma region SW_1
 
 /**
- * \brief Set SW_UP pull mode
+ * \brief Set SW_1 pull mode
  *
  * Configure pin to pull up, down or disable pull mode, supported pull
  * modes are defined by device used
  *
  * \param[in] pull_mode Pin pull mode
  */
-static inline void SW_UP_set_pull_mode(const enum port_pull_mode pull_mode)
+static inline void SW_1_set_pull_mode(const enum port_pull_mode pull_mode)
 {
 	PORTC_set_pin_pull_mode(0, pull_mode);
 }
 
 /**
- * \brief Set SW_UP data direction
+ * \brief Set SW_1 data direction
  *
  * Select if the pin data direction is input, output or disabled.
  * If disabled state is not possible, this function throws an assert.
@@ -41,67 +41,67 @@ static inline void SW_UP_set_pull_mode(const enum port_pull_mode pull_mode)
  *                      PORT_DIR_OFF = Disables the pin
  *                      (low power state)
  */
-static inline void SW_UP_set_dir(const enum port_dir dir)
+static inline void SW_1_set_dir(const enum port_dir dir)
 {
 	PORTC_set_pin_dir(0, dir);
 }
 
 /**
- * \brief Set SW_UP level
+ * \brief Set SW_1 level
  *
  * Sets output level on a pin
  *
  * \param[in] level true  = Pin level set to "high" state
  *                  false = Pin level set to "low" state
  */
-static inline void SW_UP_set_level(const bool level)
+static inline void SW_1_set_level(const bool level)
 {
 	PORTC_set_pin_level(0, level);
 }
 
 /**
- * \brief Toggle output level on SW_UP
+ * \brief Toggle output level on SW_1
  *
  * Toggle the pin level
  */
-static inline void SW_UP_toggle_level()
+static inline void SW_1_toggle_level()
 {
 	PORTC_toggle_pin_level(0);
 }
 
 /**
- * \brief Get level on SW_UP
+ * \brief Get level on SW_1
  *
  * Reads the level on a pin
  */
-static inline bool SW_UP_get_level()
+static inline bool SW_1_get_level()
 {
 	return PORTC_get_pin_level(0);
 }
 
-#pragma endregion SW_UP
+#pragma endregion SW_1
 
 /************************************************************************/
-/* SW_LEFT                                                              */
+/* SW_2                                                                 */
 /************************************************************************/
 
-#pragma region SW_LEFT
+#pragma region SW_2
 
 /**
- * \brief Set SW_LEFT pull mode
+ * \brief Set SW_2 pull mode
  *
  * Configure pin to pull up, down or disable pull mode, supported pull
  * modes are defined by device used
  *
  * \param[in] pull_mode Pin pull mode
  */
-static inline void SW_LEFT_set_pull_mode(const enum port_pull_mode pull_mode)
+static inline void SW_2_set_pull_mode(const enum port_pull_mode pull_mode)
 {
 	PORTC_set_pin_pull_mode(1, pull_mode);
 }
 
 /**
- * \brief Set SW_LEFT data direction
+ * \brief Set SW_2 data direction
  *
  * Select if the pin data direction is input, output or disabled.
  * If disabled state is not possible, this function throws an assert.
@@ -111,67 +111,67 @@ static inline void SW_LEFT_set_pull_mode(const enum port_pull_mode pull_mode)
  *                      PORT_DIR_OFF = Disables the pin
  *                      (low power state)
  */
-static inline void SW_LEFT_set_dir(const enum port_dir dir)
+static inline void SW_2_set_dir(const enum port_dir dir)
 {
 	PORTC_set_pin_dir(1, dir);
 }
 
 /**
- * \brief Set SW_LEFT level
+ * \brief Set SW_2 level
  *
  * Sets output level on a pin
  *
  * \param[in] level true  = Pin level set to "high" state
  *                  false = Pin level set to "low" state
  */
-static inline void SW_LEFT_set_level(const bool level)
+static inline void SW_2_set_level(const bool level)
 {
 	PORTC_set_pin_level(1, level);
 }
 
 /**
- * \brief Toggle output level on SW_LEFT
+ * \brief Toggle output level on SW_2
  *
  * Toggle the pin level
  */
-static inline void SW_LEFT_toggle_level()
+static inline void SW_2_toggle_level()
 {
 	PORTC_toggle_pin_level(1);
 }
 
 /**
- * \brief Get level on SW_LEFT
+ * \brief Get level on SW_2
  *
  * Reads the level on a pin
  */
-static inline bool SW_LEFT_get_level()
+static inline bool SW_2_get_level()
 {
 	return PORTC_get_pin_level(1);
 }
 
-#pragma endregion SW_LEFT
+#pragma endregion SW_2
 
 /************************************************************************/
-/* SW_RIGHT                                                             */
+/* SW_3                                                                 */
 /************************************************************************/
 
-#pragma region SW_RIGHT
+#pragma region SW_3
 
 /**
- * \brief Set SW_RIGHT pull mode
+ * \brief Set SW_3 pull mode
  *
  * Configure pin to pull up, down or disable pull mode, supported pull
  * modes are defined by device used
  *
  * \param[in] pull_mode Pin pull mode
  */
-static inline void SW_RIGHT_set_pull_mode(const enum port_pull_mode pull_mode)
+static inline void SW_3_set_pull_mode(const enum port_pull_mode pull_mode)
 {
 	PORTC_set_pin_pull_mode(2, pull_mode);
 }
 
 /**
- * \brief Set SW_RIGHT data direction
+ * \brief Set SW_3 data direction
  *
  * Select if the pin data direction is input, output or disabled.
  * If disabled state is not possible, this function throws an assert.
@@ -181,67 +181,67 @@ static inline void SW_RIGHT_set_pull_mode(const enum port_pull_mode pull_mode)
  *                      PORT_DIR_OFF = Disables the pin
  *                      (low power state)
  */
-static inline void SW_RIGHT_set_dir(const enum port_dir dir)
+static inline void SW_3_set_dir(const enum port_dir dir)
 {
 	PORTC_set_pin_dir(2, dir);
 }
 
 /**
- * \brief Set SW_RIGHT level
+ * \brief Set SW_3 level
  *
  * Sets output level on a pin
  *
  * \param[in] level true  = Pin level set to "high" state
  *                  false = Pin level set to "low" state
  */
-static inline void SW_RIGHT_set_level(const bool level)
+static inline void SW_3_set_level(const bool level)
 {
 	PORTC_set_pin_level(2, level);
 }
 
 /**
- * \brief Toggle output level on SW_RIGHT
+ * \brief Toggle output level on SW_3
  *
  * Toggle the pin level
  */
-static inline void SW_RIGHT_toggle_level()
+static inline void SW_3_toggle_level()
 {
 	PORTC_toggle_pin_level(2);
 }
 
 /**
- * \brief Get level on SW_RIGHT
+ * \brief Get level on SW_3
  *
  * Reads the level on a pin
  */
-static inline bool SW_RIGHT_get_level()
+static inline bool SW_3_get_level()
 {
 	return PORTC_get_pin_level(2);
 }
 
-#pragma endregion SW_RIGHT
+#pragma endregion SW_3
 
 /************************************************************************/
-/* SW_DOWN                                                              */
+/* SW_4                                                                 */
 /************************************************************************/
 
-#pragma region SW_DOWN
+#pragma region SW_4
 
 /**
- * \brief Set SW_DOWN pull mode
+ * \brief Set SW_4 pull mode
  *
  * Configure pin to pull up, down or disable pull mode, supported pull
  * modes are defined by device used
  *
  * \param[in] pull_mode Pin pull mode
  */
-static inline void SW_DOWN_set_pull_mode(const enum port_pull_mode pull_mode)
+static inline void SW_4_set_pull_mode(const enum port_pull_mode pull_mode)
 {
 	PORTC_set_pin_pull_mode(3, pull_mode);
 }
 
 /**
- * \brief Set SW_DOWN data direction
+ * \brief Set SW_4 data direction
  *
  * Select if the pin data direction is input, output or disabled.
  * If disabled state is not possible, this function throws an assert.
@@ -251,45 +251,45 @@ static inline void SW_DOWN_set_pull_mode(const enum port_pull_mode pull_mode)
  *                      PORT_DIR_OFF = Disables the pin
  *                      (low power state)
  */
-static inline void SW_DOWN_set_dir(const enum port_dir dir)
+static inline void SW_4_set_dir(const enum port_dir dir)
 {
 	PORTC_set_pin_dir(3, dir);
 }
 
 /**
- * \brief Set SW_DOWN level
+ * \brief Set SW_4 level
  *
  * Sets output level on a pin
  *
  * \param[in] level true  = Pin level set to "high" state
  *                  false = Pin level set to "low" state
  */
-static inline void SW_DOWN_set_level(const bool level)
+static inline void SW_4_set_level(const bool level)
 {
 	PORTC_set_pin_level(3, level);
 }
 
 /**
- * \brief Toggle output level on SW_DOWN
+ * \brief Toggle output level on SW_4
  *
  * Toggle the pin level
  */
-static inline void SW_DOWN_toggle_level()
+static inline void SW_4_toggle_level()
 {
 	PORTC_toggle_pin_level(3);
 }
 
 /**
- * \brief Get level on SW_DOWN
+ * \brief Get level on SW_4
  *
  * Reads the level on a pin
  */
-static inline bool SW_DOWN_get_level()
+static inline bool SW_4_get_level()
 {
 	return PORTC_get_pin_level(3);
 }
 
-#pragma endregion SW_DOWN
+#pragma endregion SW_4
 
 /************************************************************************/
 /* LCD_D4                                                               */

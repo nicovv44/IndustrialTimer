@@ -120,34 +120,34 @@ void system_init()
 	/* PORT setting on PC0 */
 
 	// Set pin direction to input
-	SW_UP_set_dir(PORT_DIR_IN);
+	SW_1_set_dir(PORT_DIR_IN);
 
 	// Set pin pull up
-	SW_UP_set_pull_mode(PORT_PULL_UP);
+	SW_1_set_pull_mode(PORT_PULL_UP);
 	
 	/* PORT setting on PC1 */
 
 	// Set pin direction to input
-	SW_LEFT_set_dir(PORT_DIR_IN);
+	SW_2_set_dir(PORT_DIR_IN);
 
 	// Set pin pull up
-	SW_LEFT_set_pull_mode(PORT_PULL_UP);
+	SW_2_set_pull_mode(PORT_PULL_UP);
 	
 	/* PORT setting on PC2 */
 
 	// Set pin direction to input
-	SW_RIGHT_set_dir(PORT_DIR_IN);
+	SW_3_set_dir(PORT_DIR_IN);
 
 	// Set pin pull up
-	SW_RIGHT_set_pull_mode(PORT_PULL_UP);
+	SW_3_set_pull_mode(PORT_PULL_UP);
 	
 	/* PORT setting on PC3 */
 
 	// Set pin direction to input
-	SW_DOWN_set_dir(PORT_DIR_IN);
+	SW_4_set_dir(PORT_DIR_IN);
 
 	// Set pin pull up
-	SW_DOWN_set_pull_mode(PORT_PULL_UP);
+	SW_4_set_pull_mode(PORT_PULL_UP);
 	
 #pragma endregion PORTC_SETTING
 

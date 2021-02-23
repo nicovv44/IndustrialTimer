@@ -9,69 +9,69 @@
 #include "include/atmel_start_pins.h"
 #include <stdbool.h>
 
-static SwitchState SW_UP_STATE = RELEASED;
-static SwitchState SW_LEFT_STATE = RELEASED;
-static SwitchState SW_RIGHT_STATE = RELEASED;
-static SwitchState SW_DOWN_STATE = RELEASED;
+static SwitchState SW_1_STATE = RELEASED;
+static SwitchState SW_2_STATE = RELEASED;
+static SwitchState SW_3_STATE = RELEASED;
+static SwitchState SW_4_STATE = RELEASED;
 
-volatile bool SW_UP_TO_PROCESS = false;
-volatile bool SW_LEFT_TO_PROCESS = false;
-volatile bool SW_RIGHT_TO_PROCESS = false;
-volatile bool SW_DOWN_TO_PROCESS = false;
+volatile bool SW_1_TO_PROCESS = false;
+volatile bool SW_2_TO_PROCESS = false;
+volatile bool SW_3_TO_PROCESS = false;
+volatile bool SW_4_TO_PROCESS = false;
 
 ISR(PCINT1_vect)
 {
-	SwitchState SW_UP_STATE_loc = SW_UP_get_level() ? RELEASED : PRESSED;
-	SwitchState SW_LEFT_STATE_loc = SW_LEFT_get_level() ? RELEASED : PRESSED;
-	SwitchState SW_RIGHT_STATE_loc = SW_RIGHT_get_level() ? RELEASED : PRESSED;
-	SwitchState SW_DOWN_STATE_loc = SW_DOWN_get_level() ? RELEASED : PRESSED;
+	SwitchState SW_1_STATE_loc = SW_1_get_level() ? RELEASED : PRESSED;
+	SwitchState SW_2_STATE_loc = SW_2_get_level() ? RELEASED : PRESSED;
+	SwitchState SW_3_STATE_loc = SW_3_get_level() ? RELEASED : PRESSED;
+	SwitchState SW_4_STATE_loc = SW_4_get_level() ? RELEASED : PRESSED;
 	
-	if(SW_UP_STATE_loc != SW_UP_STATE) // SW_UP changed state
+	if(SW_1_STATE_loc != SW_1_STATE) // SW_1 changed state
 	{
-		if(SW_UP_STATE_loc == PRESSED) // SW_UP is pressed
+		if(SW_1_STATE_loc == PRESSED) // SW_1 is pressed
 		{
-			SW_UP_STATE = PRESSED;
-			SW_UP_TO_PROCESS = true;
+			SW_1_STATE = PRESSED;
+			SW_1_TO_PROCESS = true;
 		}
-		else // SW_UP is released
+		else // SW_1 is released
 		{
-			SW_UP_STATE = RELEASED;
+			SW_1_STATE = RELEASED;
 		}
 	}
-	else if(SW_LEFT_STATE_loc != SW_LEFT_STATE) // SW_LEFT changed state
+	else if(SW_2_STATE_loc != SW_2_STATE) // SW_2 changed state
 	{
-		if(SW_LEFT_STATE_loc == PRESSED) // SW_LEFT is pressed
+		if(SW_2_STATE_loc == PRESSED) // SW_2 is pressed
 		{
-			SW_LEFT_STATE = PRESSED;
-			SW_LEFT_TO_PROCESS = true;
+			SW_2_STATE = PRESSED;
+			SW_2_TO_PROCESS = true;
 		}
-		else // SW_LEFT is released
+		else // SW_2 is released
 		{
-			SW_LEFT_STATE = RELEASED;
+			SW_2_STATE = RELEASED;
 		}
 	}
-	else if(SW_RIGHT_STATE_loc != SW_RIGHT_STATE) // SW_RIGHT changed state
+	else if(SW_3_STATE_loc != SW_3_STATE) // SW_3 changed state
 	{
-		if(SW_RIGHT_STATE_loc == PRESSED) // SW_RIGHT is pressed
+		if(SW_3_STATE_loc == PRESSED) // SW_3 is pressed
 		{
-			SW_RIGHT_STATE = PRESSED;
-			SW_RIGHT_TO_PROCESS = true;
+			SW_3_STATE = PRESSED;
+			SW_3_TO_PROCESS = true;
 		}
-		else // SW_RIGHT is released
+		else // SW_3 is released
 		{
-			SW_RIGHT_STATE = RELEASED;
+			SW_3_STATE = RELEASED;
 		}
 	}
-	else if(SW_DOWN_STATE_loc != SW_DOWN_STATE) // SW_DOWN changed state
+	else if(SW_4_STATE_loc != SW_4_STATE) // SW_4 changed state
 	{
-		if(SW_DOWN_STATE_loc == PRESSED) // SW_DOWN is pressed
+		if(SW_4_STATE_loc == PRESSED) // SW_4 is pressed
 		{
-			SW_DOWN_STATE = PRESSED;
-			SW_DOWN_TO_PROCESS = true;
+			SW_4_STATE = PRESSED;
+			SW_4_TO_PROCESS = true;
 		}
-		else // SW_DOWN is released
+		else // SW_4 is released
 		{
-			SW_DOWN_STATE = RELEASED;
+			SW_4_STATE = RELEASED;
 		}
 	}
 }
