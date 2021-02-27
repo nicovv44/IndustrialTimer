@@ -186,7 +186,16 @@
     <Compile Include="driver_isr.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="EEPROM\EepromTool.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="EEPROM\EepromTool.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="include\atmel_start_pins.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\Constants.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\driver_init.h">
@@ -272,6 +281,7 @@
     <Folder Include="include\" />
     <Folder Include="LCD" />
     <Folder Include="Display" />
+    <Folder Include="EEPROM" />
     <Folder Include="Switch" />
     <Folder Include="src\" />
     <Folder Include="Timer\" />

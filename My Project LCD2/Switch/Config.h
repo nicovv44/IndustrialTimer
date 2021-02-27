@@ -17,7 +17,6 @@ typedef enum
 	RELEASED = 1
 } SwitchState;
 
-
 extern volatile bool SW_1_TO_PROCESS;
 extern volatile bool SW_2_TO_PROCESS;
 extern volatile bool SW_3_TO_PROCESS;

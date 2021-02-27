@@ -5,6 +5,8 @@
 #include "Config/clock_config.h"
 #include "Switch/Config.h"
 #include "Display/DisplayTool.h"
+#include "EEPROM/EepromTool.h"
+#include "include/Constants.h"
 #include <atmel_start.h>
 #include <util\delay.h>
 #include <stdio.h>
@@ -31,15 +33,17 @@
 	//Waiting = false;
 //}
 
-const char Revision[9] = "00.00.01";
-volatile int operationValue = 123;
-volatile int setValue = 7538;
+const char Revision[9] = "00.00.02";
+volatile uint32_t operationValue = 123;
+volatile uint32_t setValue = 7538;
 
 int main(void)
 {
 	/* Initializes MCU, drivers and middleware */
 	atmel_start_init();
 	
+	setValue = EEPROM_read_setValue();
+
 	lcd_init();
 	lcd_xy( 0, 0);
 	char RevisionDisplay[17];
@@ -60,10 +64,14 @@ int main(void)
 		_delay_ms(10);
 		if(SW_1_TO_PROCESS)
 		{
+			// Display UP
 			lcd_clear();
 			lcd_xy( 0, 0);
 			char Off[3] = "UP";
 			lcd_puts( (void*)Off );
+			// Increase set value, store in EEPROM, and display it
+			EEPROM_write_setValue(++setValue);
+			displaySetValue(setValue);
 			SW_1_TO_PROCESS = false;
 		}
 		else if (SW_2_TO_PROCESS)

@@ -6,22 +6,22 @@
  */
 
 
- #include "LCD\lcd_drv.h"
- #include <stdio.h>
+#include "LCD\lcd_drv.h"
+#include <stdio.h>
 
 
- void displayOperationValue(int operationValue)
+ void displayOperationValue(uint32_t operationValue)
  {
  char displayLine[17] = "";
- sprintf(displayLine, "%.16d", operationValue);
+ sprintf(displayLine, "%.16lu", operationValue);
  lcd_xy( 0, 0);
  lcd_puts( (void*)displayLine );
  }
 
- void displaySetValue(int setValue)
+ void displaySetValue(uint32_t setValue)
 {
 	char displayLine[17] = "";
-	sprintf(displayLine, "%.16d", setValue);
+	sprintf(displayLine, "%.16lu", setValue);
 	lcd_xy( 0, 1);
 	lcd_puts( (void*)displayLine );
 }
