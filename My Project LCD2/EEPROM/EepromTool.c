@@ -50,7 +50,7 @@ uint32_t EEPROM_read_setValue()
 {
 	if(VALID_VALUE_FLAG != EEPROM_read(EEPROM_SETVALUE_VALID_ADDRESS)) // EEPROM value of setValue not initialized (valid)
 	{
-		EEPROM_write_setValue(0);
+		EEPROM_write_setValue(SETVALUE_DEFAULT);
 	}
 	uint32_t l_setValue = 0;
 	for(int i=0; i<4; i++)

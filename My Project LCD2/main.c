@@ -33,27 +33,31 @@
 	//Waiting = false;
 //}
 
-const char Revision[9] = "00.00.02";
-volatile uint32_t operationValue = 123;
-volatile uint32_t setValue = 7538;
+const char Revision[9] = "00.00.03";
+volatile uint32_t operationValue = 0;
+volatile uint32_t setValue = 0;
 
 int main(void)
 {
 	/* Initializes MCU, drivers and middleware */
 	atmel_start_init();
-	
+	lcd_init();
+
+	// Get some values from EEPROM
 	setValue = EEPROM_read_setValue();
 
-	lcd_init();
+	// Display Revision
 	lcd_xy( 0, 0);
 	char RevisionDisplay[17];
 	sprintf(RevisionDisplay, "Revision%s", Revision);
 	lcd_puts( (void*)RevisionDisplay );
 	_delay_ms(2000);
 
+	// Display welcome screen
 	displayOperationValue(operationValue);
 	displaySetValue(setValue);
 	
+	// Enable interrupts (switches, etc...)
 	sei();
 	
 	//Waiting = true;
@@ -67,8 +71,8 @@ int main(void)
 			// Display UP
 			lcd_clear();
 			lcd_xy( 0, 0);
-			char Off[3] = "UP";
-			lcd_puts( (void*)Off );
+			char Text[3] = "UP";
+			lcd_puts( (void*)Text );
 			// Increase set value, store in EEPROM, and display it
 			EEPROM_write_setValue(++setValue);
 			displaySetValue(setValue);
@@ -78,24 +82,28 @@ int main(void)
 		{
 			lcd_clear();
 			lcd_xy( 0, 0);
-			char Off[5] = "LEFT";
-			lcd_puts( (void*)Off );
+			char Text[5] = "LEFT";
+			lcd_puts( (void*)Text );
 			SW_2_TO_PROCESS = false;
 		}
 		else if (SW_3_TO_PROCESS)
 		{
 			lcd_clear();
 			lcd_xy( 0, 0);
-			char Off[6] = "RIGHT";
-			lcd_puts( (void*)Off );
+			char Text[6] = "RIGHT";
+			lcd_puts( (void*)Text );
 			SW_3_TO_PROCESS = false;
 		}
 		else if (SW_4_TO_PROCESS)
 		{
+			// Display DOWN
 			lcd_clear();
 			lcd_xy( 0, 0);
-			char Off[5] = "DOWN";
-			lcd_puts( (void*)Off );
+			char Text[5] = "DOWN";
+			lcd_puts( (void*)Text );
+			// Decrease set value, store in EEPROM, and display it
+			EEPROM_write_setValue(--setValue);
+			displaySetValue(setValue);
 			SW_4_TO_PROCESS = false;
 		}
 	}
