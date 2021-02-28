@@ -5,7 +5,7 @@
  *  Author: Nicolas VERHELST
  */ 
 
-#include "Switch/Config.h"
+#include "Switch/SwitchConfig.h"
 #include "include/atmel_start_pins.h"
 #include <stdbool.h>
 

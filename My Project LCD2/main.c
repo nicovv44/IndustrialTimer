@@ -3,7 +3,7 @@
 #include "LCD/mydefs.h"
 #include "Timer\CustomTimer.h"
 #include "Config/clock_config.h"
-#include "Switch/Config.h"
+#include "Switch/SwitchConfig.h"
 #include "Display/DisplayTool.h"
 #include "EEPROM/EepromTool.h"
 #include "include/Constants.h"
@@ -12,30 +12,10 @@
 #include <stdio.h>
 
 
-//bool Waiting = false;
-//void ToggleLCD()
-//{
-	//static bool lcdOn = true;
-	//if(lcdOn)
-	//{
-		//lcd_xy( 0, 0);
-		//char Off[4] = "OFF";
-		//lcd_puts( (void*)Off );
-		//lcdOn = false;
-	//}
-	//else
-	//{
-		//lcd_xy( 0, 0);
-		//char Off[4] = "ON ";
-		//lcd_puts( (void*)Off );
-		//lcdOn = true;
-	//}
-	//Waiting = false;
-//}
-
-const char Revision[9] = "00.00.03";
+const char Revision[9] = "00.00.04";
 volatile uint32_t operationValue = 0;
 volatile uint32_t setValue = 0;
+
 
 int main(void)
 {
@@ -59,10 +39,6 @@ int main(void)
 	
 	// Enable interrupts (switches, etc...)
 	sei();
-	
-	//Waiting = true;
-	//startTimerAction(500, false, ToggleLCD);
-	//while (Waiting) ;
 
 	while (1) {
 		_delay_ms(10);

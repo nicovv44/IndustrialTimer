@@ -231,10 +231,10 @@
     <Compile Include="src\protected_io.S">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Switch\Config.c">
+    <Compile Include="Switch\SwitchConfig.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Switch\Config.h">
+    <Compile Include="Switch\SwitchConfig.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Timer\atmega-timers.c">

@@ -1,13 +1,13 @@
 /*
- * Config.h
+ * SwitchConfig.h
  *
  * Created: 21/02/2021 2:27:52 PM
  *  Author: Nicolas VERHELST
  */ 
 
 
-#ifndef CONFIG_H_
-#define CONFIG_H_
+#ifndef SWITCHCONFIG_H_
+#define SWITCHCONFIG_H_
 
 #include <stdbool.h>
 
@@ -22,4 +22,4 @@ extern volatile bool SW_2_TO_PROCESS;
 extern volatile bool SW_3_TO_PROCESS;
 extern volatile bool SW_4_TO_PROCESS;
 
-#endif /* CONFIG_H_ */
+#endif /* SWITCHCONFIG_H_ */
