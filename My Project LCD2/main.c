@@ -13,13 +13,26 @@
 #include <stdio.h>
 
 
-const char Revision[9] = "00.00.05";
+const char Revision[9] = "00.00.06";
 volatile uint32_t operationValue = 0;
 volatile uint32_t setValue = 0;
 
 
 int main(void)
 {
+	/************************************************************************/
+	/* Initialize some variables                                            */
+	/************************************************************************/
+	// Tells whether the device is in prog mode (activated by first switch)
+	bool ProgMode = false;
+	bool ProgModeEntryIntention = false;
+	// Tell whether the device is in shift mode
+	bool ShiftMode = false;
+	bool ShiftModeEntryIntention = false;
+	bool ShiftModeExitIntention = false;
+	// Cursor position
+	int cursor_x = -1, cursor_y = -1;
+
 	/* Initializes MCU, drivers and middleware */
 	atmel_start_init();
 	lcd_init();
@@ -43,45 +56,50 @@ int main(void)
 
 	while (1) {
 		_delay_ms(10);
-		if(SW_1_TO_PROCESS)
+		/************************************************************************/
+		/* Switch press understanding (intention building)                      */
+		/************************************************************************/
+		// Enter shift mode (shift button outside shift mode)
+		if(SW_2_TO_PROCESS && !ShiftMode)
 		{
-			// Display UP
-			lcd_clear();
-			lcd_xy( 0, 0);
-			char Text[3] = "UP";
-			lcd_puts( (void*)Text );
-			// Increase set value, store in EEPROM, and display it
-			EEPROM_write_setValue(++setValue);
-			displaySetValue(setValue);
-			SW_1_TO_PROCESS = false;
-		}
-		else if (SW_2_TO_PROCESS)
-		{
-			lcd_clear();
-			lcd_xy( 0, 0);
-			char Text[5] = "LEFT";
-			lcd_puts( (void*)Text );
+			ShiftModeEntryIntention = true;
 			SW_2_TO_PROCESS = false;
 		}
-		else if (SW_3_TO_PROCESS)
+		// Shift during shift mode
+		else if (SW_2_TO_PROCESS && ShiftMode)
 		{
-			lcd_clear();
-			lcd_xy( 0, 0);
-			char Text[6] = "RIGHT";
-			lcd_puts( (void*)Text );
-			SW_3_TO_PROCESS = false;
+			if(cursor_x < 15)
+			{
+				cursor_x++;
+				lcd_cursor_blink(cursor_x, cursor_y);
+			}
+			SW_2_TO_PROCESS = false;
+				
 		}
-		else if (SW_4_TO_PROCESS)
+		// Exit shift mode (enter button in shift mode)
+		else if (SW_4_TO_PROCESS && ShiftMode)
 		{
-			// Display DOWN
-			lcd_clear();
-			lcd_xy( 0, 0);
-			char Text[5] = "DOWN";
-			lcd_puts( (void*)Text );
-			// Decrease set value, store in EEPROM, and display it
-			EEPROM_write_setValue(--setValue);
-			displaySetValue(setValue);
+			ShiftModeExitIntention = true;
 			SW_4_TO_PROCESS = false;
+			
+		}
+
+		/************************************************************************/
+		/* Actions                                                              */
+		/************************************************************************/
+
+		if(ShiftModeEntryIntention)
+		{
+			cursor_x = 6; cursor_y = 1;
+			lcd_cursor_blink(cursor_x, cursor_y);
+			ShiftMode = true;
+			ShiftModeEntryIntention = false;
+		}
+		if(ShiftModeExitIntention)
+		{
+			lcd_nocursor_noblink();
+			ShiftMode = false;
+			ShiftModeExitIntention = false;
 		}
 	}
 }

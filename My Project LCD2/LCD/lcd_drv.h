@@ -124,6 +124,8 @@ void lcd_puts( void *s );
 void lcd_blank( uint8_t len );          // blank n digits
 void lcd_clear( void );					// Clear all display
 void lcd_command( uint8_t d );
+void lcd_nocursor_noblink( void );
+void lcd_cursor_blink( uint8_t x, uint8_t y );
 
 
 

@@ -129,3 +129,14 @@ void lcd_init( void )
 	lcd_command( 0x06 );                          // cursor increment
 	lcd_command( 0x0C );                          // on, no cursor, no blink
 }
+
+void lcd_nocursor_noblink( void )
+{
+	lcd_command( 0x0C ); // on, no cursor, no blink
+}
+
+void lcd_cursor_blink( uint8_t x, uint8_t y )
+{
+	lcd_command( 0x0F ); // on, cursor, blink
+	lcd_xy(x, y);
+}
