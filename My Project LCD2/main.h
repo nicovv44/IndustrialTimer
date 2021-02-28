@@ -9,8 +9,17 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
+/**
+ * @brief Intention of action to be processed each loop; it is a sort of state machine state
+ */
+typedef enum
+{
+	Idle,
+	ShiftModeEntry,
+	ShiftInShiftMode,
+	ShiftModeExit
+} Intention;
 
-
-
+void IntentionActionner(Intention *intention);
 
 #endif /* MAIN_H_ */
