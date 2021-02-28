@@ -7,12 +7,13 @@
 #include "Display/DisplayTool.h"
 #include "EEPROM/EepromTool.h"
 #include "include/Constants.h"
+#include "main.h"
 #include <atmel_start.h>
 #include <util\delay.h>
 #include <stdio.h>
 
 
-const char Revision[9] = "00.00.04";
+const char Revision[9] = "00.00.05";
 volatile uint32_t operationValue = 0;
 volatile uint32_t setValue = 0;
 

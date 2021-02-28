@@ -174,16 +174,10 @@
     <Compile Include="Config\clock_config.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Config\RTE_Components.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="Display\DisplayTool.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Display\DisplayTool.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="driver_isr.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="EEPROM\EepromTool.c">
@@ -223,6 +217,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\driver_init.c">
