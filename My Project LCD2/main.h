@@ -17,6 +17,7 @@ typedef enum
 	Idle,
 	ShiftModeEntry,
 	ShiftInShiftMode,
+	IncreaseInShiftMode,
 	ShiftModeExit
 } Intention;
 

@@ -12,10 +12,10 @@
 
  void displayOperationValue(uint32_t operationValue)
  {
- char displayLine[17] = "";
- sprintf(displayLine, "ope:  %.10lu", operationValue);
- lcd_xy( 0, 0);
- lcd_puts( (void*)displayLine );
+	 char displayLine[17] = "";
+	 sprintf(displayLine, "ope:  %.10lu", operationValue);
+	 lcd_xy( 0, 0);
+	 lcd_puts( (void*)displayLine );
  }
 
  void displaySetValue(uint32_t setValue)

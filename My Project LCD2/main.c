@@ -13,7 +13,7 @@
 #include <stdio.h>
 
 
-const char Revision[9] = "00.00.07";
+const char Revision[9] = "00.00.08";
 volatile uint32_t operationValue = 0;
 volatile uint32_t setValue = 0;
 
@@ -77,6 +77,12 @@ int main(void)
 			intention = ShiftInShiftMode;
 			SW_2_TO_PROCESS = false;
 		}
+		// Increase during shift mode
+		else if (SW_3_TO_PROCESS && ShiftMode)
+		{
+			intention = IncreaseInShiftMode;
+			SW_2_TO_PROCESS = false;
+		}
 		// Exit shift mode (enter button in shift mode)
 		else if (SW_4_TO_PROCESS && ShiftMode)
 		{
@@ -114,8 +120,14 @@ void IntentionActionner(Intention *intention)
 			*intention = Idle;
 			break;
 
+		case IncreaseInShiftMode:
+			// TODO: increase digit in shift mode
+			*intention = Idle;
+			break;
+
 		case ShiftModeExit:
 			lcd_nocursor_noblink();
+			// TODO: update set value will the digits obtained in shift mode
 			ShiftMode = false;
 			*intention = Idle;
 			break;
