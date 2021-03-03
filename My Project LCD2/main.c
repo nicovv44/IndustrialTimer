@@ -124,8 +124,6 @@ void IntentionActionner(Intention *intention)
 			EEPROM_write_setValue(SetValue);
 			EEPROM_wait_write_completion();
 			lcd_nocursor_noblink();
-			SetValue = EEPROM_read_setValue(); // Used for debug
-			displaySetValue(); // Used for debug
 			ShiftMode = false;
 			*intention = Idle;
 			break;

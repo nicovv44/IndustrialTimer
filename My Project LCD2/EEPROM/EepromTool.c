@@ -27,8 +27,7 @@ void EEPROM_write(unsigned int uiAddress, unsigned char ucData)
 unsigned char EEPROM_read(unsigned int uiAddress)
 {
 	/* Wait for completion of previous write */
-	while(EECR & (1<<EEPE))
-	;
+	EEPROM_wait_write_completion();
 	/* Set up address register */
 	EEAR = uiAddress;
 	/* Start eeprom read by writing EERE */
@@ -62,7 +61,7 @@ uint32_t EEPROM_read_setValue()
 	uint32_t l_setValue = 0;
 	for(int i=0; i<4; i++)
 	{
-		l_setValue |= EEPROM_read(EEPROM_SETVALUE_ADDRESS+i) << (8*i);
+		l_setValue |= ((uint32_t)EEPROM_read(EEPROM_SETVALUE_ADDRESS+i)) << (8*i);
 	}
 	return l_setValue;
 }
