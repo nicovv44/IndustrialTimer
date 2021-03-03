@@ -17,6 +17,8 @@ void EEPROM_write(unsigned int uiAddress, unsigned char ucData);
 
 unsigned char EEPROM_read(unsigned int uiAddress);
 
+void EEPROM_wait_write_completion();
+
 void EEPROM_write_setValue(uint32_t value);
 
 uint32_t EEPROM_read_setValue();

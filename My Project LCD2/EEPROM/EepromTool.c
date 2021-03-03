@@ -7,14 +7,14 @@
 
 #include "include/Constants.h"
 #include "EEPROM/EepromTool.h"
+#include "Globals.h"
 #include <system.h>
 #include <stdio.h>
 
 void EEPROM_write(unsigned int uiAddress, unsigned char ucData)
 {
 	/* Wait for completion of previous write */
-	while(EECR & (1<<EEPE))
-	;
+	EEPROM_wait_write_completion();
 	/* Set up address and Data Registers */
 	EEAR = uiAddress;
 	EEDR = ucData;
@@ -35,6 +35,13 @@ unsigned char EEPROM_read(unsigned int uiAddress)
 	EECR |= (1<<EERE);
 	/* Return data from Data Register */
 	return EEDR;
+}
+
+void EEPROM_wait_write_completion()
+{
+	/* Wait for completion of previous write */
+	while(EECR & (1<<EEPE))
+	;
 }
 
 void EEPROM_write_setValue(uint32_t value)

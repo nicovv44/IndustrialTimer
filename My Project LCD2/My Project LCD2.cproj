@@ -252,6 +252,12 @@
     <Compile Include="Timer\CustomTimer.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Tools\MyMath.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tools\MyMath.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="utils\assembler.h">
       <SubType>compile</SubType>
     </Compile>
@@ -285,6 +291,7 @@
     <Folder Include="LCD" />
     <Folder Include="Display" />
     <Folder Include="EEPROM" />
+    <Folder Include="Tools" />
     <Folder Include="Switch" />
     <Folder Include="src\" />
     <Folder Include="Timer\" />

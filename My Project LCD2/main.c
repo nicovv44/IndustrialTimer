@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 
-const char Revision[9] = "00.00.09";
+const char Revision[9] = "00.00.10";
 
 
 int main(void)
@@ -114,15 +114,18 @@ void IntentionActionner(Intention *intention)
 
 		case IncreaseInShiftMode:
 			// TODO: increase digit in shift mode
-			increaseSetValueDigit(cursor_x - 6);
+			increaseSetValueDigit(9 -(cursor_x - 6));
 			displaySetValue();
 			lcd_cursor_blink(cursor_x, cursor_y);
 			*intention = Idle;
 			break;
 
 		case ShiftModeExit:
+			EEPROM_write_setValue(SetValue);
+			EEPROM_wait_write_completion();
 			lcd_nocursor_noblink();
-			// TODO: update set value will the digits obtained in shift mode
+			SetValue = EEPROM_read_setValue(); // Used for debug
+			displaySetValue(); // Used for debug
 			ShiftMode = false;
 			*intention = Idle;
 			break;
