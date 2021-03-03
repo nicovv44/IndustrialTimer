@@ -20,8 +20,8 @@ extern volatile uint32_t OperationValue;
 extern volatile uint32_t SetValue;
 // Tells whether the device is in prog mode (activated by first switch)
 extern bool ProgMode;
-// Tell whether the device is in shift mode
-extern bool ShiftMode;
+// Tell whether the device is in SetVal configuration mode
+extern bool SetValMode;
 // Cursor position for blinking purposes
 extern uint8_t cursor_x, cursor_y;
 

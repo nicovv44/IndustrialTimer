@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 
-const char Revision[9] = "00.00.11";
+const char Revision[9] = "00.00.12";
 
 
 int main(void)
@@ -57,29 +57,29 @@ int main(void)
 		/************************************************************************/
 		/* Build an intention (switch press understanding)                      */
 		/************************************************************************/
-		//////////////////////////////////////////////////////////////////////////Shift mode
-		// Enter shift mode (shift button outside shift mode)
-		if(SW_2_TO_PROCESS && !ShiftMode)
+		////////////////////////////////////////////////////////////////////////// SetVal mode
+		// Enter SetVal mode (shift button outside SetVal mode)
+		if(SW_2_TO_PROCESS && !SetValMode)
 		{
-			intention = ShiftModeEntry;
+			intention = SetValModeEntry;
 			SW_2_TO_PROCESS = false;
 		}
-		// Shift during shift mode
-		else if (SW_2_TO_PROCESS && ShiftMode)
+		// Shift during SetVal mode
+		else if (SW_2_TO_PROCESS && SetValMode)
 		{
-			intention = ShiftInShiftMode;
+			intention = ShiftInSetValMode;
 			SW_2_TO_PROCESS = false;
 		}
-		// Increase during shift mode
-		else if (SW_3_TO_PROCESS && ShiftMode)
+		// Increase during SetVal mode
+		else if (SW_3_TO_PROCESS && SetValMode)
 		{
-			intention = IncreaseInShiftMode;
+			intention = IncreaseInSetValMode;
 			SW_3_TO_PROCESS = false;
 		}
-		// Exit shift mode (enter button in shift mode)
-		else if (SW_4_TO_PROCESS && ShiftMode)
+		// Exit SetVal mode (enter button in SetVal mode)
+		else if (SW_4_TO_PROCESS && SetValMode)
 		{
-			intention = ShiftModeExit;
+			intention = SetValModeExit;
 			SW_4_TO_PROCESS = false;
 		}
 		////////////////////////////////////////////////////////////////////////// Prog mode
@@ -111,17 +111,17 @@ void IntentionActionner(Intention *intention)
 		case Idle:
 			break;
 
-		////////////////////////////////////////////////////////////////////////// Shift mode
-		case ShiftModeEntry:
+		////////////////////////////////////////////////////////////////////////// SetVal mode
+		case SetValModeEntry:
 			lcd_clear();
-			displayShiftModeHome();
+			displaySetValModeHome();
 			cursor_x = 6; cursor_y = 1;
 			lcd_cursor_blink(cursor_x, cursor_y);
-			ShiftMode = true;
+			SetValMode = true;
 			*intention = Idle;
 			break;
 
-		case ShiftInShiftMode:
+		case ShiftInSetValMode:
 			if(cursor_x < 15)
 			{
 				lcd_cursor_blink(++cursor_x, cursor_y);
@@ -129,22 +129,21 @@ void IntentionActionner(Intention *intention)
 			*intention = Idle;
 			break;
 
-		case IncreaseInShiftMode:
-			// TODO: increase digit in shift mode
+		case IncreaseInSetValMode:
 			increaseSetValueDigit(9 -(cursor_x - 6));
 			displaySetValue();
 			lcd_cursor_blink(cursor_x, cursor_y);
 			*intention = Idle;
 			break;
 
-		case ShiftModeExit:
+		case SetValModeExit:
 			EEPROM_write_setValue(SetValue);
 			EEPROM_wait_write_completion();
 			lcd_clear();
 			displayOperationValue();
 			displaySetValue();
 			lcd_nocursor_noblink();
-			ShiftMode = false;
+			SetValMode = false;
 			*intention = Idle;
 			break;
 

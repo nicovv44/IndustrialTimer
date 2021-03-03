@@ -28,7 +28,7 @@ void displaySetValue()
 	lcd_puts( (void*)displayLine );
 }
 
-void displayShiftModeHome()
+void displaySetValModeHome()
 {
 	char displayLine[17] = "Set value config";
 	lcd_xy( 0, 0);

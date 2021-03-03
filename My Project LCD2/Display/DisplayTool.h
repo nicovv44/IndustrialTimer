@@ -17,7 +17,7 @@ void displayOperationValue();
 
 void displaySetValue();
 
-void displayShiftModeHome();
+void displaySetValModeHome();
 
 void displayProgModeHome();
 

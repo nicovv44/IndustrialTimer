@@ -15,11 +15,11 @@
 typedef enum
 {
 	Idle,
-	// Shift mode
-	ShiftModeEntry,
-	ShiftInShiftMode,
-	IncreaseInShiftMode,
-	ShiftModeExit,
+	// SetVal mode
+	SetValModeEntry,
+	ShiftInSetValMode,
+	IncreaseInSetValMode,
+	SetValModeExit,
 	// Prog mode
 	ProgModeEntry,
 	ProgModeExit
