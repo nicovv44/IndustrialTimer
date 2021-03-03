@@ -9,8 +9,12 @@
 #ifndef DISPLAYTOOL_H_
 #define DISPLAYTOOL_H_
 
-void displayOperationValue(uint32_t operationValue);
 
-void displaySetValue(uint32_t setValue);
+void displayOperationValue();
+
+void displaySetValue();
+
+void increaseSetValueDigit(uint8_t index);
+
 
 #endif /* DISPLAYTOOL_H_ */
