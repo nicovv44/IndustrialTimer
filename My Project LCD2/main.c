@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 
-const char Revision[9] = "00.00.10";
+const char Revision[9] = "00.00.11";
 
 
 int main(void)
@@ -57,6 +57,7 @@ int main(void)
 		/************************************************************************/
 		/* Build an intention (switch press understanding)                      */
 		/************************************************************************/
+		//////////////////////////////////////////////////////////////////////////Shift mode
 		// Enter shift mode (shift button outside shift mode)
 		if(SW_2_TO_PROCESS && !ShiftMode)
 		{
@@ -81,6 +82,19 @@ int main(void)
 			intention = ShiftModeExit;
 			SW_4_TO_PROCESS = false;
 		}
+		////////////////////////////////////////////////////////////////////////// Prog mode
+		// Enter prog mode
+		else if (SW_1_TO_PROCESS && !ProgMode)
+		{
+			intention = ProgModeEntry;
+			SW_1_TO_PROCESS = false;
+		}
+		//Exit prog mode
+		else if (SW_1_TO_PROCESS && ProgMode)
+		{
+			intention = ProgModeExit;
+			SW_1_TO_PROCESS = false;
+		}
 
 		/************************************************************************/
 		/* Action the intention                                                 */
@@ -97,7 +111,10 @@ void IntentionActionner(Intention *intention)
 		case Idle:
 			break;
 
+		////////////////////////////////////////////////////////////////////////// Shift mode
 		case ShiftModeEntry:
+			lcd_clear();
+			displayShiftModeHome();
 			cursor_x = 6; cursor_y = 1;
 			lcd_cursor_blink(cursor_x, cursor_y);
 			ShiftMode = true;
@@ -123,8 +140,30 @@ void IntentionActionner(Intention *intention)
 		case ShiftModeExit:
 			EEPROM_write_setValue(SetValue);
 			EEPROM_wait_write_completion();
+			lcd_clear();
+			displayOperationValue();
+			displaySetValue();
 			lcd_nocursor_noblink();
 			ShiftMode = false;
+			*intention = Idle;
+			break;
+
+		////////////////////////////////////////////////////////////////////////// Prog mode
+		case ProgModeEntry:
+			lcd_clear();
+			displayProgModeHome();
+			cursor_x = 15; cursor_y = 1;
+			lcd_cursor_blink(cursor_x, cursor_y);
+			ProgMode = true;
+			*intention = Idle;
+			break;
+
+		case ProgModeExit:
+			lcd_clear();
+			displayOperationValue();
+			displaySetValue();
+			lcd_nocursor_noblink();
+			ProgMode = false;
 			*intention = Idle;
 			break;
 	}

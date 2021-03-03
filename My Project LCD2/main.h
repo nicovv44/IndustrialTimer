@@ -15,10 +15,14 @@
 typedef enum
 {
 	Idle,
+	// Shift mode
 	ShiftModeEntry,
 	ShiftInShiftMode,
 	IncreaseInShiftMode,
-	ShiftModeExit
+	ShiftModeExit,
+	// Prog mode
+	ProgModeEntry,
+	ProgModeExit
 } Intention;
 
 void IntentionActionner(Intention *intention);

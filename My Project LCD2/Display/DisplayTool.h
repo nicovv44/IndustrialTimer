@@ -17,6 +17,10 @@ void displayOperationValue();
 
 void displaySetValue();
 
+void displayShiftModeHome();
+
+void displayProgModeHome();
+
 void increaseSetValueDigit(uint8_t index);
 
 void ModifSetValue(uint32_t digit, uint32_t valueRepresentedByDigit, uint32_t digitOverflowValue);

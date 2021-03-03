@@ -12,19 +12,34 @@
 #include <stdio.h>
 
 
- void displayOperationValue()
- {
-	 char displayLine[17] = "";
-	 sprintf(displayLine, "ope:  %.10lu", OperationValue);
-	 lcd_xy( 0, 0);
-	 lcd_puts( (void*)displayLine );
- }
+void displayOperationValue()
+{
+	char displayLine[17] = "";
+	sprintf(displayLine, "ope:  %.10lu", OperationValue);
+	lcd_xy( 0, 0);
+	lcd_puts( (void*)displayLine );
+}
 
- void displaySetValue()
+void displaySetValue()
 {
 	char displayLine[17] = "";
 	sprintf(displayLine, "set:  %.10lu", SetValue);
 	lcd_xy( 0, 1);
+	lcd_puts( (void*)displayLine );
+}
+
+void displayShiftModeHome()
+{
+	char displayLine[17] = "Set value config";
+	lcd_xy( 0, 0);
+	lcd_puts( (void*)displayLine );
+	displaySetValue();
+}
+
+void displayProgModeHome()
+{
+	char displayLine[17] = "Prog mode";
+	lcd_xy( 0, 0);
 	lcd_puts( (void*)displayLine );
 }
 
